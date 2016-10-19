@@ -1,14 +1,12 @@
-require 'unirest'
-require 'uri'
+require 'open-uri'
 class ChuckNorris
   attr_accessor :categories, :first_name, :last_name
   def initialize
     @categories = []
   end
   def self.random
-    response = Unirest.get "http://api.icndb.com/jokes/random"
     begin
-      body = response.body
+      body = request "http://api.icndb.com/jokes/random"
       if body["type"] == "success"
         return body["value"]["joke"]
       end
@@ -46,7 +44,7 @@ class ChuckNorris
       puts e
     end
   end
-  def get_categories    
+  def get_categories
     begin
       body = request "http://api.icndb.com/categories"
       body["value"].each do |x|
@@ -60,8 +58,8 @@ class ChuckNorris
 
   private
   def request(path)
-    response = Unirest.get(URI.escape(path))
-    body = response.body
+    response = open(URI.escape(path)).read
+    body = JSON.parse(response.body)
     raise ChuckNorris::UnsuccessfulError if body['value'] == "value"
     body
   end

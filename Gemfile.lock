@@ -6,7 +6,6 @@ PATH
 GEM
   remote: http://www.rubygems.org/
   specs:
-    addressable (2.4.0)
     coderay (1.1.0)
     diff-lcs (1.2.5)
     domain_name (0.5.25)
@@ -28,7 +27,6 @@ GEM
       rspec (>= 2.14, < 4.0)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
-    json (1.8.3)
     listen (3.0.5)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -75,10 +73,6 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
-    unirest (1.0.8)
-      addressable
-      json
-      rest-client
 
 PLATFORMS
   ruby
@@ -96,7 +90,6 @@ DEPENDENCIES
   rest-client (>= 1.8.0)
   rspec (~> 2.14.1)
   rspec-nc (~> 0.0.6)
-  unirest
 
 BUNDLED WITH
    1.11.2

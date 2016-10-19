@@ -19,5 +19,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry-remote"
   s.add_development_dependency "pry-nav"
   s.add_development_dependency "growl"
-  s.add_development_dependency "unirest"
 end
